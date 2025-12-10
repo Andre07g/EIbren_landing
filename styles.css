@@ -1,0 +1,237 @@
+/* ========= Configuracion global ========= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100vw;
+    margin: 0;
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+
+    /* transición suave global */
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ========= Navbar ========= */
+.barra-navegacion {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    padding-top: 0;
+    height: 10vh !important;
+    animation: fadeDown 1s ease forwards;
+}
+
+.barra-navegacion img {
+    max-width: 30%;
+    opacity: 0;
+    height: 10vh !important; 
+    animation: fadeIn 1.3s ease forwards;
+}
+
+/* ========= Banner ========= */
+.banner {
+    width: 100%;
+    position: relative;
+    animation: fadeIn 1.4s ease forwards;
+}
+
+.banner img {
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+.banner button {
+    width: 40%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.12);
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    font-size: 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: 0.3s ease;
+    animation: fadeUp 1s ease forwards;
+}
+
+.banner button:hover {
+    width: 50%;
+    height: 60px;
+    font-size: 1.3em;
+    background-color: rgba(255, 255, 255, 0.055);
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* ========= Colecciones ========= */
+.colecciones {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.colecciones h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 1.3s ease forwards;
+}
+
+/* Cartas */
+.tarjeta {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.tarjeta:hover {
+    transform: scale(1.03);
+}
+
+.tarjeta img {
+    width: 47.5%;
+    transition: 0.4s ease;
+}
+
+.tarjeta:hover img {
+    filter: brightness(1.15);
+}
+
+.tarjeta div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 47.5%;
+    gap: 8px;
+}
+
+/* ========= Footer ========= */
+.footer {
+    width: 100%;
+    background-color: #000;
+    padding: 40px 0 20px 0;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.footer-col p {
+    opacity: 0.8;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin: 6px 0;
+}
+
+.footer-col ul li a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    opacity: 1;
+    letter-spacing: .5px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social img {
+    width: 30px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.social img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    opacity: 0.5;
+    font-size: 0.9em;
+}
+
+/* ========= WhatsApp flotante ========= */
+.whatsapp {
+    width: 22%;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 100;
+    cursor: pointer;
+
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease forwards;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* ========= Animaciones ========= */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translate(-50%, -35%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
