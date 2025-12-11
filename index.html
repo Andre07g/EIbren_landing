@@ -168,5 +168,17 @@
     <img src="./src/whatsapp.png" class="whatsapp">
 
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const whatsappBtn = document.querySelector(".whatsapp");
 
+        whatsappBtn.addEventListener("click", () => {
+            const numero = "573022532005"; 
+            const mensaje = "Hola!%20Quisiera%20más%20información."; 
+            
+            const url = `https://wa.me/${numero}?text=${mensaje}`;
+            window.open(url, "_blank");
+        });
+    });
+</script>
 </html>
